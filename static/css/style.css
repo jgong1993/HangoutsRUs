@@ -67,6 +67,10 @@ body {background-color: #FFF;}
     color:white;
 }
 
+.center {
+    margin: 0 auto;
+    width: 80%;
+}
 
 
 
