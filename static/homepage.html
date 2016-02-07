@@ -20,9 +20,12 @@
 		<!-- p means paragraph -->
 		<div id="sidebar-wrapper">	
 			<div class="sidebar-nav">
-				<li><a>Welcome, [you]!</a></li><hr>
+				<li><div id="profileName">
+						<img align="middle" class="img-rounded" src="images/icson.jpg" onError="this.src='images/placeholder.png';"> </img>
+					</div>
+					<a id="sidebarName"> Cheese Corn</a>
+				</li><hr>
 				<li><a href="homepage.html">Home</a></li><hr>
-
 				<li><a href="friends.html">Your Friends</a></li>
 				<li><a href="gallery.html">Your Photos</a></li><hr>
 				<li><a href="viewGroups.html">Your Groups</a></li>
@@ -33,24 +36,36 @@
 					</span> Back</button></a>
 				<a href="index.html"> <button id="logoutButton" type="button" class="btn"><span class="glyphicon glyphicon-off" aria-hidden="true">
 					</span> Log Out</button></a>
-			
 			</div>
-			
-
 		</div> <!-- end of sidebar wrapper -->
 
 		<div id="page-content-wrapper">
-			<a style = "position:absolute; top:15; left:15;" href="#menu-toggle" class="btn btn-default" id="menu-toggle">
-				<span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>    Toggle Menu
-			</a>
+			<!-- <a style = "position:absolute; top:15; left:15;" href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+				<span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>    Toggle Menu </a> -->
 			<div class="container-fluid">
 				<div class="jumbotron">
 					<h1>hangouts R us</h1>
 					<p>nothing to do? we got something for ya</p>
 				</div>
+				<div class="miniNavBar">
+					<table class="miniNavTable"> 
+						<tr><td> <a href="#menu-toggle"  id="menu3-toggle"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							    Toggle Menu
+							</a></td>
+						<td> <a href="#showCalendar" id="showCalendar"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+							    Show Calendar
+							</a></td>
+						<td> <a href="#showGroups" id="showGroups"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+							    Show Groups
+							</a></td>
+						</tr>
+					</table>
+				</div>
 				<hr>
-				<h3>Your Calendar</h3>
+				
+				
 				<div id="tableContainer" class="tableContainer">
+					<h3>Your Calendar</h3>
 					<table border="0" cellpadding="0" cellspacing="0" width="15%" class="noScrollTable ">
 							<tr><td></td></tr>
 							<tr> <td>Monday</td> </tr>
@@ -64,7 +79,7 @@
 
 				 	<table border="0" cellpadding="0" cellspacing="0" width="85%" class="scrollTable">
 					    <tbody class="scrollContent">
-					    	<tr >
+					    	<tr>
 						        <td>12a</td>
 						        <td>1a</td>
 						        <td>2a</td>
@@ -91,7 +106,7 @@
 						        <td>11p</td>
 					        </tr>
 					    	<tr>
-						        <td colspan="2"><div class="hoverBlack"> <p> Sleep [12a-2a] </p></div></td>
+						        <td colspan="2"><div class="hoverBlack"><p> Sleep [12a-2a] </p></div></td>
 						        <td colspan="2"><div class="hoverBlack"><p> Sleep </p></div></td>
 						        <td colspan="2"><div class="hoverBlack"><p> Sleep </p></div></td>
 						        <td colspan="2"><div class="hoverBlack"><p> Sleep </p></div></td>
@@ -108,7 +123,7 @@
 						        <td colspan="2"><div class="hoverBlue"><p> Sleep </p></div></td>
 					      </tr>
 					      <tr>
-						        <td colspan="8"><div class="hoverGreen"><p> Finish 170 project [Forever] </p></div></td>
+						         <td colspan="8"><div class="hoverGreen"><p> Finish 170 project [Forever] </p></div></td>
 					      </tr>
 					       <tr>
 						         <td colspan="8"><div class="hoverGreen"><p> Finish 170 project [Forever] </p></div></td>
@@ -121,15 +136,15 @@
 					      </tr>
 					    </tbody>
 					</table> 
+					<hr>
 				</div>
-				<hr>
 				<!-- END OF CALANDER -->
 
 				<!-- BEGIN OF GROUPS DIV -->
-				<div class="groupDiv">
+				<div id="groupDiv" class="groupDiv">
 					<h3>Your Groups</h3><br>
 					<div class="row">
-					  <div class="noob col-xs-6 col-md-4">
+					  <div class="groupRows col-xs-6 col-md-4">
 					    <a href="#" class="thumbnail">
 					      <p> Trash Squad </p>
 					      <hr>
@@ -150,7 +165,7 @@
 					    </a>
 					  </div>
 
-					  <div class="noob2 col-xs-6 col-md-8">
+					  <div class="groupRows2 col-xs-6 col-md-8">
 					    <a class="thumbnail">
 					      <p class="groupDescrip"> Description </p>
 					      <hr>
@@ -180,13 +195,25 @@
     <script src="js/bootstrap.min.js"></script>
 	<script>
 		$(document).ready(function() {
-				 $("#wrapper").toggleClass("toggled");
+			$("#wrapper").toggleClass("toggled");
 		});
+		$("#showCalendar").click(function(e) {
+	        e.preventDefault();
+	        $("#tableContainer").toggle();
+	    });
+	    $("#showGroups").click(function(e) {
+	        e.preventDefault();
+	        $("#groupDiv").toggle();
+	    });
 	    $("#menu-toggle").click(function(e) {
 	        e.preventDefault();
 	        $("#wrapper").toggleClass("toggled");
 	    });
 	    $("#menu2-toggle").click(function(e) {
+	        e.preventDefault();
+	        $("#wrapper").toggleClass("toggled");
+	    });
+	     $("#menu3-toggle").click(function(e) {
 	        e.preventDefault();
 	        $("#wrapper").toggleClass("toggled");
 	    });
