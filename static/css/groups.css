@@ -1,0 +1,35 @@
+.listview {
+	background-color: #f1f1f1;
+	border: 3px solid #555;
+	border-radius: 5px;
+	list-style-type: none;
+	text-decoration: none;
+
+}
+
+.listview li {
+	border-bottom: 3px solid #555;
+	list-style-type: none;
+	margin-left: 0px;
+	text-decoration: none;
+	position:relative;
+	display:block;
+}
+
+.listview li:last-child {
+	border-bottom: none;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+.listview li a{
+	border: none;
+	display: block;
+	padding: 20px 40px;
+}
+
+.listview li:hover {
+	background-color: #555;
+	list-style-type: none;
+	text-decoration: none;
+}
