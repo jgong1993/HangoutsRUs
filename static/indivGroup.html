@@ -9,6 +9,7 @@
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="css/sidebar.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/groups.css" rel="stylesheet">
 	<!-- this is a comment in HTML -->    
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 </head>
@@ -20,14 +21,12 @@
 			<div class="sidebar-nav">
 				<ul>
 				<li><a href="homepage.html">Home</a></li>
+				<li><a href="viewGroups.html">Your Groups</a></li>
 				<li><a href="friends.html">Your Friends</a></li>
-				<li><a href="gallery.html">Picture Gallery</a></li>
-				<li><a href="viewGroups.html">View Groups</a></li>
-				<li><a href="groupchat.html">Group Chats</a></li>
+				<li><a href="gallery.html">Your Photos</a></li>
 				<li><a href="upcomingEvents.html">Upcoming Events</a></li>
-				<li><a href="planEvent.html">Plan an Event</a></li>
 				<li><a href="browseActivities.html">Browse Activities</a></li>
-				</ul>
+				</ul>				</ul>
 			</div>
 			<a href="index.html"> <button id="logoutButton" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-off" aria-hidden="true">
 			</span> Log Out</button></a>
@@ -41,18 +40,27 @@
 				<div class="jumbotron">
 					<h1>Trash Squad</h1>
 				</div>
-				<h3>Members:</h3>
-				<div style="margin-left:20px;">
-					<li>Diana</li>
-					<li>Ivy</li>
-					<li>Kathy</li>
-					</ul>					
+
+				<div>
+					<ul class="listview">
+						<li class="submenu"><a href="#">Members<span class="glyphicon glyphicon-chevron-down" aria-hidden="true" style="float:right;"></a></li>
+							<ul class="submenu">
+								<li>Diana</li>
+								<li>Ivy</li>
+								<li>Kathy</li>
+								<!-- Make Edit Option elsewhere -->
+								<li><a href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a></li>
+							</ul>
+						<li><a href="upcomingEvents.html">Upcoming Events<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
+						<li><a href="planEvent.html" class="planEvent.html">Plan a New Event<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
+						<li><a href="gallery.html">Photos<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
+						<li><a href="upcomingEvents.html">Past Events<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-remove"></span> Leave Group</a></li>
+					</ul>				
 				</div>
-				<h3>Upcoming Events:</h3>
-				<h3>Photos:</h3>
-				<h3>Past Events:</h3>
+
 			</div>
-			<a href="planEvent.html" style="margin:20px;" class="btn btn-default">Plan a New Event!</a>
+
 		</div>
 	</div>
 
@@ -60,6 +68,12 @@
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.js"></script>
 	<script>
+		$('li.submenu')
+		.css({cursor: "pointer"})
+		.on('click', function(){
+		  $(this).next('ul').toggle();
+		})
+
 		function hideDiv(){
 		 	$("#wrapper").toggleClass("toggled");
 		 }
