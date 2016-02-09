@@ -10,8 +10,8 @@ var handlebars = require('express3-handlebars')
 
 //var index = require('./routes/index');
 var groups = require('./routes/groups');
-// Example route
-// var user = require('./routes/user');
+var indivGroup = require('./routes/indivGroup');
+var addGroup = require('./routes/addGroup');
 
 var app = express();
 
@@ -37,10 +37,9 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', groups.viewGroups);
-//app.get('/project/:name', project.viewProject);
+app.get('/group/:name', indivGroup.thisGroup);
+app.get('/addGroup', addGroup.addNewGroup);
 
-// Example route
-// app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

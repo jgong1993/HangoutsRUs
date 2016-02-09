@@ -6,24 +6,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	
-	<script src="/js/groups.js"></script> 
+	<script src="/js/jquery-1.11.0.js"></script> 
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/introHCI.js"></script> 
 
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/sidebar.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/groups.css" rel="stylesheet"> 
-	
-	<!--
-	<script src="/static/js/groups.js"></script> 
-
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="/static/css/sidebar.css" rel="stylesheet">
-	<link href="/static/css/style.css" rel="stylesheet">
-	<link href="/static/css/groups.css" rel="stylesheet">
-	-->
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/sidebar.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="/css/groups.css" rel="stylesheet"> 
 
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 </head>
@@ -50,32 +42,57 @@
 			<a style = "position:absolute; top:15; left:15;" href="#menu-toggle" class="btn btn-default" id="menu-toggle">
 				<span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>    Toggle Menu
 			</a>
+
 			<div class="container-fluid">
 				<div class="jumbotron">
 					<h1>Your Groups</h1>
 				</div>
 
-				<div><a href="makeGroup.html" class="newBtn"><span class="glyphicon glyphicon-plus"></span> New Group</a></div>
+				<div class="newBtn"><span class="glyphicon glyphicon-plus"></span> New Group</div>
 
+				<!-- COLLAPSABLE FORM FOR NEW GROUP -->
+				<div class="submenu" style="margin-bottom: 20px;">
+					<form role="form" method="get" action="/addGroup">
+					  <div class="form-group">
+					    <label for="friends">Choose Your Friends</label>
+					    <input type="text" class="form-control" id="friends" placeholder="Names" name="friends">
+					  </div>
+					  <div class="form-group">
+					    <label for="name">Choose A Group Name</label>
+					    <input type="text" class="form-control" id="name" placeholder="[the best group ever]" name="name">
+					  </div>
+					  <div class="form-group">
+					    <label for="description">Description (Optional)</label>
+					    <input type="text" class="form-control" id="description" placeholder="teamwork makes the dream work..." name="description">
+					  </div>
+					  <input type="submit" id="submitBtn" class="btn btn-default" value="Add New Group"></input>
+					  
+					</form>
+				</div>
+				
+
+				<!-- LIST OF YOUR SQUADS -->
 				<div>
 					<ul class="listview">
 						{{#each groups}}
-						<li><a href="indivGroup.html">{{name}}<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
+						<li><a href="group/{{name}}">{{name}}<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
 						{{/each}}
 					</ul>				
 				</div>
 
-			</div>
+			</div> <!-- END CONTAINER-FLUID -->
 		</div>
-
-
 
 	</div>
 
 	 
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.js"></script>
 	<script>
+		$('.newBtn')
+		.css({cursor: "pointer"})
+		.on('click', function(){
+		  $(this).next('div').toggle();
+		})
+
 		function hideDiv(){
 		 	$("#wrapper").toggleClass("toggled");
 		 }
