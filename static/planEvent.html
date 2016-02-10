@@ -45,15 +45,20 @@
 				<form>
 				  <div class="form-group">
 				    <label for="exampleInputEmail1">Choose Your Group</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+				    <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Dropdown of groups user is in"> -->
+				    <select name="groups">
+					  <option value="trash squad">trash squad</option>
+					  <option value="opera fam">opera fam</option>
+					  <option value="Amanda's Room">Amanda's Room</option>
+					</select>
 				  </div>
 				  <div class="form-group">
 				    <label for="exampleInputPassword1">Date</label>
-				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				    <input type="datetime-local" class="form-control" id="exampleInputPassword1" placeholder="When is your event">
 				  </div>
 				   <div class="form-group">
 				    <label for="exampleInputPassword1">Suggest an Activity</label>
-				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="What do you want to do">
 				  </div>
 				  
 				  <a href="viewEvent.html" style="margin:20px;" class="btn btn-default">Add</a>
