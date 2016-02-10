@@ -2,22 +2,32 @@
 	"groups": [
 		{
 			"name": "Trash Squad",
+			"description": "We are trash.",
 			"members": ""
 		},
 		{
 			"name": "Opera Fam",
+			"description": "Sing for me",
 			"members": ""
 		},
 				{
 			"name": "Amanda's Room",
+			"description": "Since COGS3",
 			"members": ""
 		},
 		{
 			"name": "Team Marvel",
+			"description": "jerks",
 			"members": ""
 		},
 		{
 			"name": "Puppy Bowl",
+			"description": "I can't believe they made a human verison of the puppy bowl.",
+			"members": ""
+		},
+		{
+			"name": "Keating 5",
+			"description": "THE murderer's club",
 			"members": ""
 		}
 	]
