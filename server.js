@@ -32,10 +32,10 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-//var index = require('./routes/index');
-var groups = require('./routes/events');
-var indivGroup = require('./routes/indivEvent');
-var addGroup = require('./routes/addEvent');
+var index = require('./routes/index');
+var events = require('./routes/events');
+var indivEvent = require('./routes/indivEvent');
+var addEvent = require('./routes/addEvent');
 
 var app = express();
 
@@ -60,7 +60,8 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', events.viewEvents);
+app.get('/', index.view);
+app.get('/upcomingEvents', events.viewEvents);
 app.get('/event/:name', indivEvent.thisEvent);
 app.get('/addEvent', addEvent.addNewEvent);
 

@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>hangouts R us - Upcoming Events</title>	
+	<title>hangouts R us - Plan an Event</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,17 +39,30 @@
 			</a>
 			<div class="container-fluid">
 				<div class="jumbotron">
-					<h1>Upcoming Events</h1>
+					<h1>Plan an Event</h1>
 				</div>
-<!--
-				<ul class="list-group">
-				  <li class="list-group-item">Cras justo odio 01/02  <button type="button" class="rightMarg pull-right btn btn-default">Add event</button></li>
-				  <li class="list-group-item">Dapibus ac facilisis in 01/02 <button type="button" class="rightMarg pull-right btn btn-default">Add event</button></li>
-				  <li class="list-group-item">Dapibus ac facilisis in 01/02 <button type="button" class="rightMarg pull-right btn btn-default">Add event</button></li>
-				  <li class="list-group-item">Dapibus ac facilisis in 01/02 <button type="button" class="rightMarg pull-right btn btn-default">Add event</button></li>
-				</ul>
--->
-				<a href="planEvent.html" style="margin:20px;" class="btn btn-default">Plan a New Event!</a>
+				
+				<form>
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Choose Your Group</label>
+				    <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Dropdown of groups user is in"> -->
+				    <select name="groups">
+					  <option value="trash squad">trash squad</option>
+					  <option value="opera fam">opera fam</option>
+					  <option value="Amanda's Room">Amanda's Room</option>
+					</select>
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Date</label>
+				    <input type="datetime-local" class="form-control" id="exampleInputPassword1" placeholder="When is your event">
+				  </div>
+				   <div class="form-group">
+				    <label for="exampleInputPassword1">Suggest an Activity</label>
+				    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="What do you want to do">
+				  </div>
+				  
+				  <a href="viewEvent.html" style="margin:20px;" class="btn btn-default">Add</a>
+				</form>
 
 			</div>
 		</div>
