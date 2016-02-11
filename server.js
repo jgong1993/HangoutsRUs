@@ -35,7 +35,8 @@ var handlebars = require('express3-handlebars')
 var index = require('./routes/index');
 var events = require('./routes/events');
 var indivEvent = require('./routes/indivEvent');
-var addEvent = require('./routes/addEvent');
+var planEvent = require('./routes/planEvent');
+var planEventResult = require('./routes/planEventResult');
 
 var app = express();
 
@@ -63,7 +64,8 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/upcomingEvents', events.viewEvents);
 app.get('/event/:name', indivEvent.thisEvent);
-app.get('/addEvent', addEvent.addNewEvent);
+app.get('/planEvent', planEvent.planEventView);
+app.get('/planEventResult', planEventResult.addNewEvent);
 
 
 http.createServer(app).listen(app.get('port'), function(){
