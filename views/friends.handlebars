@@ -2,14 +2,13 @@
 
 <html>
 <head>
-	<title>hangouts R us - Your Groups</title>	
+	<title>hangouts R us - Friends</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="css/sidebar.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<link href="css/groups.css" rel="stylesheet">
 	<!-- this is a comment in HTML -->    
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 </head>
@@ -20,10 +19,12 @@
 		<div id="sidebar-wrapper">	
 			<div class="sidebar-nav">
 				<ul>
+					<li><a>Welcome, [you]!</a></li><hr>
 				<li><a href="homepage.html">Home</a></li>
-				<li><a href="viewGroups.html">Your Groups</a></li>
 				<li><a href="friends.html">Your Friends</a></li>
 				<li><a href="gallery.html">Your Photos</a></li>
+				<li><a href="viewGroups.html">Your Groups</a></li>
+				<li><a href="groupchat.html">Group Chats</a></li>
 				<li><a href="upcomingEvents.html">Upcoming Events</a></li>
 				<li><a href="browseActivities.html">Browse Activities</a></li>
 				</ul>
@@ -38,24 +39,23 @@
 			</a>
 			<div class="container-fluid">
 				<div class="jumbotron">
-					<h1>Your Groups</h1>
+					<h1>Your Friends</h1>
+					<p>oh look! you have friends!</p>
 				</div>
-
-				<div><a href="makeGroup.html" class="newBtn"><span class="glyphicon glyphicon-plus"></span> New Group</a></div>
-
+				<h3>Your Friends</h3>
 				<div>
-					<ul class="listview">
-						<li><a href="indivGroup.html">Trash Squad<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
-						<li><a href="indivGroup.html">Opera Fam<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
-						<li><a href="indivGroup.html">Amanda's Room<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
-					</ul>				
-				</div>
+					<ul>
+					<li>Kevin</li>
+					<li>Kevin</li>
+					<li>Kevin</li>
+					{{#each friends}}
+					<li>{{name}}</li>
+					{{/friends}}
 
+					</ul>					
+				</div>
 			</div>
 		</div>
-
-
-
 	</div>
 
 	 
