@@ -56,14 +56,21 @@
 			      <label for="title">What do you wanna do:</label>
 			      <input type="text" class="form-control" id="title" placeholder="Example: go on a shopping spree" name="title">
 			    </div>
+
 			    <div class="form-group">
 			      <label for="selectsquad">Choose your group:</label>
-			      <input type="text" class="form-control" id="selectsquad" placeholder="Example: Trash Squad" name="group">
+			      <select name="group">
+			      	{{#each groups}}
+			      	<option value="{{name}}">{{name}}</option>
+			      	{{/each}}
+			      </select>
 			    </div>
+
 			    <div class="form-group">
 			      <label for="plandate">When do you want to do it:</label>
 			      <input type="text" class="form-control" id="plandate" placeholder="Example: February 29" name="when">
 			    </div>
+
 			    <input type="submit" id="submitBtn" class="btn btn-default" value="Suggest this event!"></input>
 			</form>
 
