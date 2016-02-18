@@ -1,16 +1,49 @@
 {
 	"friends": [
 		{
-			"name": "Kathy Luu"
+			"name": "Ali Aidarov"
 		},
 		{
-			"name": "Ali Aidarov"
+			"name": "Kann Chea"
+		},
+		{
+			"name": "Arnold Chen"
+		},
+		{
+			"name": "Robert Cheng"
+		},
+		{
+			"name": "Silvia Chyou"
 		},
 		{
 			"name": "Johnson Gong"
 		},
 		{
+			"name": "Aeri Iamsirithaworn"
+		},
+		{
+			"name": "Ryan Gurney"
+		},
+		{
+			"name": "Kelvin Lim"
+		},
+		{
 			"name": "Kevin Lim"
+		},
+		{
+			"name": "Kathy Luu"
+		},
+		{
+			"name": "Von Jhiro Aguila Mandocdoc"
+		},
+		{
+			"name": "Scott Miller"
+		},
+		{
+			"name": "James Natanauan"
+		},
+		{
+			"name": "Carolyn Thio"
 		},
 		{
 			"name": "Harrison Wang"
@@ -19,13 +52,10 @@
 			"name": "Jenny Wang"
 		},
 		{
+			"name": "Mubin Wang"
+		},
+		{
 			"name": "Kyle Zhu"
-		},
-		{
-			"name": "Aeri Iamsirithaworn"
-		},
-		{
-			"name": "Scott Miller"
 		}
 	]
 }
