@@ -49,17 +49,47 @@
 			<div class="container-fluid">
 				<div class="jumbotron">
 					<h1>{{groupName}}</h1>
+					<h2 style="float:right; color:white;">{{description}}</h2>
 				</div>
 
 				<div class="miniNavBar">
 					<table class="miniNavTable"> 
-						<tr><td> <a href="#menu-toggle"  id="menu3-toggle"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<tr>
+							<td> <a href="#menu-toggle"  id="menu3-toggle"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 							    Toggle Menu
 							</a></td>
+							<td><a href="#edit-group" id="edit-group"><span class="glyphicon glyphicon-edit"></span>
+								Edit Group Info</a>
+							</td>
 						</tr>
 					</table>
 				</div>
 				<hr>
+
+				<!-- COLLAPSABLE FORM FOR EDITING GROUP -->
+				<div id="submenu" style="margin-bottom: 20px;">
+					<form role="form" method="get" action="/editGroup">
+					  <div class="form-group">
+					    <label for="friends">Add Friend(s) To {{groupName}}</label><br> 
+					    <div class="scrollable">
+						  {{#each friends}}
+						  <input type="checkbox" name="friend" value="{{name}}" style="margin-left: 10px; margin-right: 7px; padding: 5px;">{{name}}<br>
+						  {{/each}}
+						</div>
+					  </div>
+					  <div class="form-group">
+					    <label for="name">New Group Name</label>
+					    <input type="text" class="form-control" id="name" placeholder="[the best group ever]" name="name">
+					  </div>
+					  <div class="form-group">
+					    <label for="description">New Description</label>
+					    <input type="text" class="form-control" id="description" placeholder="teamwork makes the dream work..." name="description">
+					  </div>
+					  <input type="submit" id="submitBtn" class="btn btn-default" name="origName" value="Update {{groupName}}"></input>
+					  
+					</form>
+				</div>
+
 
 				<div>
 					<ul class="listview">
@@ -69,8 +99,8 @@
 								<!-- <li>Diana</li>
 								<li>Ivy</li>
 								<li>Kathy</li>
-								Make Edit Option elsewhere -->
-								<li><a href="#" style="display:block;"><span class="glyphicon glyphicon-edit"></span>Add Members</a></li>
+								Make Edit Option elsewhere
+								<li><a href="#" style="display:block;"><span class="glyphicon glyphicon-edit"></span>Add Members</a></li>-->
 							</ul>
 						<li><a href="/upcomingEvents">Upcoming Events<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
 						<li><a href="/planEvent" class="planEvent.html">Plan a New Event<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
@@ -93,10 +123,16 @@
 		.css({cursor: "pointer"})
 		.on('click', function(){
 		  $(this).next('ul').toggle();
-		})
+		});
+
+		$("#edit-group").click(function(e) {
+	        e.preventDefault();
+	        $("#submenu").toggle();
+	    });
 
 		$(document).ready(function() {
 			$("#wrapper").toggleClass("toggled");
+			$("#submenu").hide();
 		});
 		 
 	     $("#menu2-toggle").click(function(e) {

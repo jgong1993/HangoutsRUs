@@ -59,6 +59,7 @@ app.get('/homepage', homepage.home);
 app.get('/addGroup', addGroup.addNewGroup);
 app.get('/addFriend', addFriend.addNewFriend);
 app.get('/browseActivities', browseActivities.viewBrowseActivities);
+app.get('/editGroup', indivGroup.editGroup);
 app.get('/friends', friends.viewFriends);
 app.get('/gallery', gallery.viewGallery);
 app.get('/group/:name', indivGroup.thisGroup);
