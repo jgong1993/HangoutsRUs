@@ -70,11 +70,10 @@
 					    <label for="friends">Choose Your Friends</label><br> 
 					    <div class="scrollable">
 					    <!-- <input type="text" class="form-control" id="friends" placeholder="Names" name="friends"> -->
-						<form>
+						
 						  {{#each friends}}
-						  <input type="checkbox" name="friend" value="friend" style="margin-left: 10px; margin-right: 7px; padding: 5px;">{{name}}<br>
+						  <input type="checkbox" name="friend" value="{{name}}" style="margin-left: 10px; margin-right: 7px; padding: 5px;">{{name}}<br>
 						  {{/each}}
-						</form>
 						</div>
 					  </div>
 					  <div class="form-group">

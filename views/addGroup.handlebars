@@ -2,21 +2,24 @@
 <!-- PAGE AFTER SUCCESSFULLY ADDING A NEW GROUP -->    
 <html>
 <head>
-	<title>hangouts R us - Your Groups</title>	
+	<title>hangouts R us</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<script src="/js/jquery-1.11.0.js"></script> 
-	<script src="/js/bootstrap.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/introHCI.js"></script> 
-
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="/css/sidebar.css" rel="stylesheet">
-	<link href="/css/style.css" rel="stylesheet">
-	<link href="/css/groups.css" rel="stylesheet"> 
-
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/sidebar.css" rel="stylesheet">
+ 	<link href="css/style.css" rel="stylesheet">
+ 	<link href="css/groups.css" rel="stylesheet">
+ 	<link href="css/photogallery.css" rel="stylesheet">
+	<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+	<style type="text/css">
+	    a.fancybox img {
+	        border: none;
+	        box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+	    } 
+	</style>
+	<!-- this is a comment in HTML -->    
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 </head>
 <body>
@@ -60,19 +63,17 @@
 				</div>
 				<hr>
 
-				<h3> Successfully added group! </h3>
 				<!-- COLLAPSABLE FORM FOR NEW GROUP -->
-				<div class="submenu" style="margin-bottom: 20px;">
+				<div id="submenu" style="margin-bottom: 20px;">
 					<form role="form" method="get" action="/addGroup">
 					  <div class="form-group">
-					    <label for="friends">Choose Your Friends</label>
+					    <label for="friends">Choose Your Friends</label><br> 
 					    <div class="scrollable">
 					    <!-- <input type="text" class="form-control" id="friends" placeholder="Names" name="friends"> -->
-						<form>
+						
 						  {{#each friends}}
 						  <input type="checkbox" name="friend" value="friend" style="margin-left: 10px; margin-right: 7px; padding: 5px;">{{name}}<br>
 						  {{/each}}
-						</form>
 						</div>
 					  </div>
 					  <div class="form-group">
@@ -88,7 +89,7 @@
 					</form>
 				</div>
 				
-
+				<h3> Successfully added group! </h3>
 				<!-- LIST OF YOUR SQUADS -->
 				<div>
 					<ul class="listview">
@@ -100,19 +101,19 @@
 
 			</div> <!-- END CONTAINER-FLUID -->
 		</div>
-
 	</div>
-
+	
+	<script src="js/jquery.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
+	<script src="fotorama/fotorama.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script> 
 	<script>
 		$(document).ready(function() {
 			$("#wrapper").toggleClass("toggled");
 			$("#submenu").hide();
 		});
-
-		$("#showGroup").click(function(e) {
-	        e.preventDefault();
-	        $("#submenu").toggle();
-	    });
 
 		$("#showGroup").click(function(e) {
 	        e.preventDefault();
@@ -126,6 +127,8 @@
 	        e.preventDefault();
 	        $("#wrapper").toggleClass("toggled");
 	    });
-    </script> 
+    </script>
+     
+
 </body>
 </html>
