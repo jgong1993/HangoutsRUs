@@ -4,11 +4,11 @@ exports.addNewGroup = function(req, res) { 
 	// Your code goes here
 	res.render('addGroup',groups);
 
-	var friend = req.query.friend;
+	var friends = req.query.friend;
 	var name = req.query.name;
 	var description = req.query.description;
-	var obj = { "name": name, "members": friend, "description": description };
-	console.log("friend: " +friend);
+	var obj = { "name": name, "members": friends, "description": description };
+	console.log("friend: " +friends);
 	console.log("name: " +name);
 	console.log("description: " +description);
 

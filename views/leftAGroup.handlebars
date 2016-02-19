@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!-- PAGE AFTER SUCCESSFULLY ADDING A NEW GROUP
-	<h3> Successfully added group! </h3>
- -->
+<!-- PAGE AFTER SUCCESSFULLY LEAVING A GROUP -->    
 <html>
 <head>
 	<title>hangouts R us</title>	
@@ -58,27 +56,25 @@
 							    Toggle Menu
 							</a></td>
 							<td> <a href="#showGroup" id="showGroup"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-							    New Groups
+							    New Group
 							</a></td>
 						</tr>
 					</table>
 				</div>
 				<hr>
 
-				<h3> Successfully added group! </h3>
-
 				<!-- COLLAPSABLE FORM FOR NEW GROUP -->
 				<div id="submenu" style="margin-bottom: 20px;">
 					<form role="form" method="get" action="/addGroup">
 					  <div class="form-group">
 					    <label for="friends">Choose Your Friends</label><br> 
-						    <div class="scrollable">
-						    <!-- <input type="text" class="form-control" id="friends" placeholder="Names" name="friends"> -->
-							
-							  {{#each friends}}
-							  <input type="checkbox" name="friend" value="friend" style="margin-left: 10px; margin-right: 7px; padding: 5px;">{{name}}<br>
-							  {{/each}}
-							</div>
+					    <div class="scrollable">
+					    <!-- <input type="text" class="form-control" id="friends" placeholder="Names" name="friends"> -->
+						
+						  {{#each friends}}
+						  <input type="checkbox" name="friend" value="{{name}}" style="margin-left: 10px; margin-right: 7px; padding: 5px;">{{name}}<br>
+						  {{/each}}
+						</div>
 					  </div>
 					  <div class="form-group">
 					    <label for="name">Choose A Group Name</label>
@@ -93,6 +89,7 @@
 					</form>
 				</div>
 				
+
 				<!-- LIST OF YOUR SQUADS -->
 				<div>
 					<ul class="listview">
@@ -117,6 +114,7 @@
 			$("#wrapper").toggleClass("toggled");
 			$("#submenu").hide();
 		});
+
 		$("#showGroup").click(function(e) {
 	        e.preventDefault();
 	        $("#submenu").toggle();

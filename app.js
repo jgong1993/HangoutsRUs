@@ -10,6 +10,9 @@ var handlebars = require('express3-handlebars')
 
 //var index = require('./routes/index');
 var addGroup = require('./routes/addGroup');
+var indivGroup = require('./routes/indivGroup');
+var leftGroup = require('./routes/leaveGroup');
+
 var addFriend = require('./routes/addFriend');
 var browseActivities = require('./routes/browseActivities');
 var friends = require('./routes/friends');
@@ -17,7 +20,6 @@ var gallery = require('./routes/gallery');
 var groups = require('./routes/groups');
 var groupchat = require('./routes/groupChat');
 var homepage = require('./routes/homepage');
-var indivGroup = require('./routes/indivGroup');
 var index = require('./routes/index')
 var upcomingEvents = require('./routes/upcomingEvents');
 
@@ -61,6 +63,7 @@ app.get('/friends', friends.viewFriends);
 app.get('/gallery', gallery.viewGallery);
 app.get('/group/:name', indivGroup.thisGroup);
 app.get('/groupchat', groupchat.viewGroupChat);
+app.get('/leftAGroup',leftGroup.leaveGroup);
 app.get('/viewGroups', groups.viewGroups);
 //app.get('/upcomingEvents', upcomingEvents.viewUpcomingEvents);
 app.get('/upcomingEvents', events.viewEvents);
