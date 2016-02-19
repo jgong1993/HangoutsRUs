@@ -19,7 +19,7 @@
 		<div id="sidebar-wrapper">	
 			<div class="sidebar-nav">
 				<li><div id="profileName">
-						<img align="middle" class="img-rounded" src="images/icson.jpg" onError="this.src='images/placeholder.png';"> </img>
+						<img align="middle" class="img-rounded" src="images/icon.jpg" onError="this.src='images/placeholder.png';"> </img>
 					</div>
 					<a id="sidebarName"> Cheese Corn</a>
 				</li><hr>
@@ -53,13 +53,14 @@
 				
 
 				{{#each events}}
+					<a href="viewEvent/{{title}}">
 					<div>
 						<h2>{{title}}</h2>
-					
 						<h4>{{when}}</h4>
 						<hr>
 						<h3>{{whoisgoing}}</h3>
 					</div>
+					</a>
 				{{/each}}
 
 
@@ -72,10 +73,9 @@
 			</div>
 		</div>
 	</div>
-
-	 
+	<script src="js/jquery.js"></script> 
     <script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.js"></script>
+	
 	<script>
 		$(document).ready(function() {
 			$("#wrapper").toggleClass("toggled");

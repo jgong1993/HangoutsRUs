@@ -5,7 +5,6 @@ exports.planEventView = function(req, res) {
 	res.render('planEvent', data);
 }
 
-
 exports.planEventView = function(req, res) {
 	res.render('planEvent', groups);
 }
