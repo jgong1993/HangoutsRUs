@@ -5,9 +5,17 @@ exports.thisGroup = function(req, res){
 	var name = req.params.name;
 	var members = "";
 	var desciption = "";
+	console.log("this group: " +name);
 
 	for(var i = 0; i < groups.groups.length; i++) {
-		if(groups["groups"][i].name == name) {
+		console.log("goes in here 1");
+		console.log("GROUP: " + groups["groups"][i]);
+
+		if(typeof groups["groups"][i] === 'undefined') {
+			console.log("goes in here 2");
+			continue;
+		}
+		else if(groups["groups"][i].name == name) {
 			members = groups["groups"][i].members;
 			description = groups["groups"][i].description;
 			console.log("FOR: " + members);
@@ -57,5 +65,25 @@ exports.editGroup = function(req, res){
 		'friends': groups["friends"]
 	});
 
+};
+
+exports.leaveGroup = function(req,res) {
+	//var key = "Trash Squad";
+	//delete groups.name[key];
+	var group = req.params.groupName;
+	console.log("group name is: " + req.params.groupName);
+	//res.render('leftAGroup',groups);
+
+	for(var i = 0; i < groups.groups.length; i++) {
+		if(typeof groups["groups"][i] === 'undefined') {
+			continue;
+		}
+		else if(groups["groups"][i].name == group) {
+			delete groups["groups"][i];
+			break;
+		}
+	}
+
+	res.render('viewGroups', groups);
 };
 

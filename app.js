@@ -11,7 +11,6 @@ var handlebars = require('express3-handlebars')
 //var index = require('./routes/index');
 var addGroup = require('./routes/addGroup');
 var indivGroup = require('./routes/indivGroup');
-var leftGroup = require('./routes/leaveGroup');
 
 var addFriend = require('./routes/addFriend');
 var browseActivities = require('./routes/browseActivities');
@@ -64,8 +63,8 @@ app.get('/friends', friends.viewFriends);
 app.get('/gallery', gallery.viewGallery);
 app.get('/group/:name', indivGroup.thisGroup);
 app.get('/groupchat', groupchat.viewGroupChat);
-app.get('/leftAGroup',leftGroup.leaveGroup);
 app.get('/viewGroups', groups.viewGroups);
+app.get('/viewGroups/:groupName', indivGroup.leaveGroup);
 //app.get('/upcomingEvents', upcomingEvents.viewUpcomingEvents);
 app.get('/upcomingEvents', events.viewEvents);
 app.get('/event/:name', indivEvent.thisEvent);
