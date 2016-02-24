@@ -9,6 +9,8 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 //var index = require('./routes/index');
+var login = require('./routes/login');
+
 var addGroup = require('./routes/addGroup');
 var indivGroup = require('./routes/indivGroup');
 
@@ -52,7 +54,7 @@ if ('development' == app.get('env')) {
 // Add routes here
 
 app.get('/', index.viewIndex);
-app.get('/homepage', homepage.home);
+app.get('/homepage', login.login);
 
 // app.get('/', homepage.home);
 app.get('/addGroup', addGroup.addNewGroup);
@@ -63,6 +65,7 @@ app.get('/friends', friends.viewFriends);
 app.get('/gallery', gallery.viewGallery);
 app.get('/group/:name', indivGroup.thisGroup);
 app.get('/groupchat', groupchat.viewGroupChat);
+app.get('/register', login.register);
 app.get('/viewGroups', groups.viewGroups);
 app.get('/viewGroups/:groupName', indivGroup.leaveGroup);
 //app.get('/upcomingEvents', upcomingEvents.viewUpcomingEvents);
