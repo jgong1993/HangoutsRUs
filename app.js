@@ -66,6 +66,7 @@ app.get('/gallery', gallery.viewGallery);
 app.get('/group/:name', indivGroup.thisGroup);
 app.get('/groupchat', groupchat.viewGroupChat);
 app.get('/register', login.register);
+app.get('/removeFriend', friends.removeFriend);
 app.get('/viewGroups', groups.viewGroups);
 app.get('/viewGroups/:groupName', indivGroup.leaveGroup);
 //app.get('/upcomingEvents', upcomingEvents.viewUpcomingEvents);

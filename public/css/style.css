@@ -86,5 +86,32 @@ hr{
 	display: block;
 }
 
+.listFriends ul {
+	border: 1px solid #000;
+	list-style: none;
+	padding: 10px 30px;
+	text-decoration: none;
+}
+
+.removeFriends .friend {
+	border: 1px solid #000;
+	margin: 10px;
+	margin-left: 10px; 
+	margin-right: 7px; 
+	padding: 50px;
+}
+
+.groupFriends .friend {
+	border: 1px solid #000;
+	margin: 10px;
+	margin-left: 10px; 
+	margin-right: 7px; 
+	padding: 50px;
+}
+
+
+
+
+
 
 

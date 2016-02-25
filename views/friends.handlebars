@@ -5,12 +5,12 @@
 	<title>hangouts R us - Friends</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/groups.css" rel="stylesheet">
-	<link href="css/sidebar.css" rel="stylesheet">
- 	<link href="css/style.css" rel="stylesheet">
- 	<link href="css/photogallery.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/groups.css" rel="stylesheet">
+	<link href="/css/sidebar.css" rel="stylesheet">
+ 	<link href="/css/style.css" rel="stylesheet">
+ 	<link href="/css/photogallery.css" rel="stylesheet">
 	<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
 	<style type="text/css">
@@ -60,9 +60,19 @@
 							<td> <a href="#menu-toggle"  id="menu3-toggle"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 							    Toggle Menu
 							</a></td>
-							<td> <a href="#showGroup" id="showGroup"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+							<td> <a href="#" id="addFriend"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 							    Add Friend
 							</a></td>
+							<td>
+								<a href="#" id="newGroup">
+								<span class="glyphicon glyphicon-plus"></span>
+								Make Group from Friends</a>
+							</td>
+							<td>
+								<a href="#" id="editFriends">
+								<span class="glyphicon glyphicon-edit"></span>
+								Edit Friends</a>
+							</td>
 
 						</tr>
 					</table>
@@ -90,15 +100,61 @@
 					</form>
 				</div>
 
+				<!-- COLLAPSABLE FORM FOR REMOVING FRIEND -->
+				<div class="removeFriends">
+					<h3>Remove Friends</h3>
+					<form role="form" method="get" action="/removeFriend">
+					    {{#each friends}}
+					    <input class="friend" type="radio" name="removename" value="{{name}}">{{name}}<br>
+						{{/each}}
 
-				<h3>Your Friends</h3>
-				{{#each friends}}
-				<div>
-					<ul>
-					<li>{{name}}</li>
-					</ul>					
+						<input type="button" id="submitBtn" class="btn btn-default" onclick="document.getElementById('cd-popup').style.display='block';" value="Remove Friend"></input>
+
+				<div id="cd-popup" role="alert">
+						<div class="cd-popup-container">
+							<p style="text-align:center;">Are you sure you want to remove this friend?</p><br><br>
+							<ul class="cd-buttons">
+								<li><input id="submitBtn" class="btn btn-default" onclick="document.getElementById('cd-popup').style.display='none';" value="Keep Friend"></input></li>
+								<li><input type="submit" id="submitBtn" class="btn btn-default" value="Remove Friend"></input></li>
+							</ul>
+						</div>
 				</div>
-				{{/each}}
+
+					</form>
+				</div>
+
+				<!-- LIST OF FRIENDS -->
+				<div class="listFriends">
+					<h3>Your Friends</h3>
+					{{#each friends}}
+						<ul>
+						<li>{{name}}</li>
+						</ul>	
+					{{/each}}
+				</div>
+				
+				<!-- COLLAPSABLE FORM FOR GROUPING FRIENDS -->
+				<div class="groupFriends">
+					<h3>Make A New Group from Friends</h3>
+					<form role="form" method="get" action="/addGroup">
+					    {{#each friends}}
+					    <input class="friend" type="checkbox" name="friend" value="{{name}}">{{name}}<br>
+						{{/each}}
+
+						<div class="form-group">
+						    <label for="name">Choose A Group Name</label>
+						    <input type="text" class="form-control" id="name" placeholder="[the best group ever]" name="name">
+						</div>
+						<div class="form-group">
+						    <label for="description">Description (Optional)</label>
+						    <input type="text" class="form-control" id="description" placeholder="teamwork makes the dream work..." name="description">
+						</div>
+
+						<input type="submit" id="submitBtn" class="btn btn-default" value="Make New Group from Selection"></input>
+					</form>
+				</div> <!-- end groupFriends -->
+
+
 			</div>
 		</div>
 	</div>
@@ -107,20 +163,45 @@
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.js"></script>
 	<script>
+		$("#newGroup").click(function(e) {
+	        e.preventDefault();
+	        $(".groupFriends").toggle();
+	        $(".listFriends").toggle();
+	        $("#submenu").hide();
+	        $(".removeFriends").hide();
+	    });
+
+	    $("#editFriends").click(function(e) {
+	        e.preventDefault();
+	        $(".removeFriends").toggle();
+	        $(".listFriends").toggle();
+	        $("#submenu").hide();
+	        $(".groupFriends").hide();
+	    });
+
 		$(document).ready(function() {
 			$("#wrapper").toggleClass("toggled");
 			$("#submenu").hide();
+			$(".groupFriends").hide();
+			$(".removeFriends").hide();
+			$("#cd-popup").hide();
 		});
 
-		$("#showGroup").click(function(e) {
+		$("#addFriend").click(function(e) {
 	        e.preventDefault();
+	        $(".listFriends").show();
 	        $("#submenu").toggle();
+	        $(".groupFriends").hide();
+			$(".removeFriends").hide();
+			$("#cd-popup").hide();
 	    });
+
 	    $("#menu2-toggle").click(function(e) {
 	        e.preventDefault();
 	        $("#wrapper").toggleClass("toggled");
 	    });
-	     $("#menu3-toggle").click(function(e) {
+
+	    $("#menu3-toggle").click(function(e) {
 	        e.preventDefault();
 	        $("#wrapper").toggleClass("toggled");
 	    });

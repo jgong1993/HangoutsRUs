@@ -107,16 +107,16 @@
 						<li><a href="/gallery">Photos<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
 						<li><a href="/upcomingEvents">Past Events<span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="float:right;"></a></li>
 						<!--<li><a href="/viewGroups/{{groupName}}"><span class="glyphicon glyphicon-remove leavegrp"></span> Leave {{groupName}}</a></li>-->
-						<li><a href="#" span class="glyphicon glyphicon-remove" id="leavegrp"></span> Leave {{groupName}}</a></li>
+						<li><a href="#" id="leavegrp" onclick="document.getElementById('cd-popup').style.display='block';"><span class="glyphicon glyphicon-remove"></span> Leave {{groupName}}</a></li>
 
 					</ul>	
 
 
 					<div class="cd-popup" role="alert">
 						<div class="cd-popup-container">
-							<p>Are you sure you want to leave this group?</p><br><br>
+							<p style="text-align:center;">Are you sure you want to leave this group?</p><br><br>
 							<ul class="cd-buttons">
-								<li id="keep"><a href="#">Keep Group</a></li>
+								<li id="keep"><a href="#" onclick="document.getElementById('cd-popup').style.display='none';">Keep Group</a></li>
 								<li><a href="/viewGroups/{{groupName}}">Leave Group</a></li>
 							</ul>
 						</div> <!-- cd-popup-container -->
@@ -136,12 +136,13 @@
 	<script>
 		$("#leavegrp").click(function(e) {
 	        e.preventDefault();
-	        $(".cd-popup").addClass("is-visible");
+	        $(".cd-popup").toggle();
+	        //$(".cd-popup").addClass("is-visible");
 	    });
 
 	    $("#keep").click(function(e) {
 	        e.preventDefault();
-	        $(".cd-popup").removeClass("is-visible");
+	        $(".cd-popup").hide();
 	    });
 
 		$('li.submenu')

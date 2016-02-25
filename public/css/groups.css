@@ -65,44 +65,56 @@ ul.listview > li:first-child {
 	margin-bottom: 20px;
 }
 
-.cd-popup {
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.3s 0s, visibility 0s 0.3s;
-}
- 
-.cd-popup.is-visible {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.3s 0s, visibility 0s 0s;
+#cd-popup {
+	display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 45%;
+    height: 35%;
+    padding: 16px;
+    border: 5px solid orange;
+    background-color: white;
+    z-index:1002;
+    overflow: auto;
 }
 
-.cd-popup-container > p {
-	float:left;
+.cd-popup {
+	display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 45%;
+    height: 45%;
+    padding: 16px;
+    border: 5px solid orange;
+    background-color: white;
+    z-index:1002;
+    overflow: auto;
 }
 
 .cd-buttons > li {
+	text-align: center;
 	background-color: #fff;
-	border: 1px solid #555;
-	list-style: none;
-	margin: 0px 10px;
-	padding: 10px;
-	padding-right: 20px;
-	text-decoration: none;
-	position:relative;
+	position: relative;
 	display: inline;
 }
 
- 
-.cd-popup-container {
-	background-color: #fff;
-    transform: translateY(-40px);
-    transition-property: transform;
-    transition-duration: 0.3s;
+.cd-buttons > li > a {
+	border: 1px solid #555;
+	display: inline-block;
+	list-style: none;
+	margin: 10px 10px;
+	padding: 10px 20px;
+	text-decoration: none;
 }
- 
-.is-visible .cd-popup-container {
-    transform: translateY(0);
+
+.cd-buttons > li > input {
+	border: 1px solid #555;
+	list-style: none;
+	margin: 10px 10px;
+	padding: 10px 20px;
+	text-decoration: none;
 }
 
 .active-btn {
