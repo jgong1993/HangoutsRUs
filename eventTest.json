@@ -6,15 +6,14 @@
 			"group": "Trash Squad",
 			"when": "January 21, 2016",
 			"whoisgoing": "Johnson and Kathy",
-			"start": "2016-02-21T16:00:00",
-			"end": "2016-02-21T17:00:00",
+			"start": "2016-03-01T16:00:00",
+			"end": "2016-03-01T17:00:00",
 			"imageURL": [
-				{"image":"images/lorempixel.jumbotron.jpeg"},
-				{"image":"images/icon.jpg"},
-				{"image":"http://cliparts.co/cliparts/8cx/KRr/8cxKRrK9i.png"},
-				{"image":"http://thedoghousediaries.com/logos/spaceman.png"}, 
-				{"image":"http://thedoghousediaries.com/logos/patreon.png"}
-				]
+					{"image":"images/lorempixel.jumbotron.jpeg"},
+					{"image":"http://cliparts.co/cliparts/8cx/KRr/8cxKRrK9i.png"},
+					{"image":"http://thedoghousediaries.com/logos/spaceman.png"}, 
+					{"image":"http://thedoghousediaries.com/logos/patreon.png"}
+					]
 		},
 		{
 			"id" : "e1",
@@ -22,15 +21,13 @@
 			"group": "Trash Squad",
 			"when": "March 16, 2016",
 			"whoisgoing": "Kathy, Diana and Ivy",
-			"start": "2016-02-22T17:00:00",
-			"end": "2016-02-22T18:00:00",
+			"start": "2016-03-02T17:00:00",
+			"end": "2016-03-02T18:00:00",
 			"imageURL": [
-				{"image":"http://images.clipartpanda.com/penguin-clip-art-aiq5zAqiM.png"},
-				{"image":"images/icon.jpg"},
-				{"image":"http://thedoghousediaries.com/logos/spaceman.png"},
-				{"image":"http://thedoghousediaries.com/logos/spaceman.png"}, 
-				{"image":"http://cliparts.co/cliparts/8cx/KRr/8cxKRrK9i.png"}
-				]
+					{"image":"http://images.clipartpanda.com/penguin-clip-art-aiq5zAqiM.png"},
+					{"image":"images/icon.jpg"},
+					{"image":"http://cliparts.co/cliparts/8cx/KRr/8cxKRrK9i.png"}
+					]
 		},
 		{
 			"id" : "e2",
@@ -41,12 +38,12 @@
 			"start": "2016-02-21T18:00:00",
 			"end": "2016-02-21T22:00:00",
 			"imageURL": [
-				{"image":"http://clipartion.com/wp-content/uploads/2015/11/blank-turtle-clip-art-blank-turtle-image.png"},
-				{"image":"http://www.kokepiscopal.org/cute-turtle-clip-art-1494678.png"},
-				{"image":"http://cdn.grid.fotosearch.com/CSP/CSP485/k4851825.jpg"},
-				{"image":"http://images.all-free-download.com/images/graphiclarge/banana_clip_art_13529.jpg"}, 
-				{"image":"http://worldartsme.com/images/turtle-border-clipart-1.jpg"}
-				]
+					{"image":"http://clipartion.com/wp-content/uploads/2015/11/blank-turtle-clip-art-blank-turtle-image.png"},
+					{"image":"http://www.kokepiscopal.org/cute-turtle-clip-art-1494678.png"},
+					{"image":"http://cdn.grid.fotosearch.com/CSP/CSP485/k4851825.jpg"},
+					{"image":"http://images.all-free-download.com/images/graphiclarge/banana_clip_art_13529.jpg"}, 
+					{"image":"http://worldartsme.com/images/turtle-border-clipart-1.jpg"}
+					]
 		},
 		{
 			"id" : "e3",
@@ -57,12 +54,12 @@
 			"start": "2016-02-21T19:00:00",
 			"end": "2016-02-21T20:00:00",
 			"imageURL": [
-				{"image":"images/lorempixel.jumbotron.jpeg"},
-				{"image":"images/icon.jpg"},
-				{"image":"http://thedoghousediaries.com/logos/spaceman.png"},
-				{"image":"http://thedoghousediaries.com/logos/spaceman.png"}, 
-				{"image":"http://thedoghousediaries.com/logos/patreon.png"}
-				]
+					{"image":"images/lorempixel.jumbotron.jpeg"},
+					{"image":"images/icon.jpg"},
+					{"image":"http://thedoghousediaries.com/logos/spaceman.png"},
+					{"image":"http://thedoghousediaries.com/logos/spaceman.png"}, 
+					{"image":"http://thedoghousediaries.com/logos/patreon.png"}
+					]
 		},
 		{
 			"id" : "e4",
@@ -73,12 +70,8 @@
 			"start": "2016-02-23T20:00:00",
 			"end": "2016-02-23T21:00:00",
 			"imageURL": [
-				{"image":"images/lorempixel.jumbotron.jpeg"},
-				{"image":"images/icon.jpg"},
-				{"image":"http://thedoghousediaries.com/logos/spaceman.png"},
-				{"image":"http://thedoghousediaries.com/logos/spaceman.png"}, 
-				{"image":"http://thedoghousediaries.com/logos/patreon.png"}
-				]
+					{"image":"images/testimg.jpg"}
+					]
 		},
 		{
 			"id" : "e5",
@@ -89,12 +82,8 @@
 			"start": "2016-02-24T21:00:00",
 			"end": "2016-02-24T22:00:00",
 			"imageURL": [
-				{"image":"images/lorempixel.jumbotron.jpeg"},
-				{"image":"images/icon.jpg"},
-				{"image":"http://thedoghousediaries.com/logos/spaceman.png"},
-				{"image":"http://thedoghousediaries.com/logos/spaceman.png"}, 
-				{"image":"http://thedoghousediaries.com/logos/patreon.png"}
-				]
+					{"image":"images/lorempixel.people.2.jpeg"}
+					]
 		}
 	]
 }
